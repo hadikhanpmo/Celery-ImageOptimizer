@@ -1,0 +1,91 @@
+<!-- upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Upload an Image</title>
+    <style>
+      /* Reset & basic */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #fff5f5;
+        color: #333;
+        line-height: 1.6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+      /* Container */
+      .card {
+        background: #fff;
+        border: 2px solid #e53935;
+        border-radius: 12px;
+        max-width: 400px;
+        width: 100%;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        color: #e53935;
+        text-align: center;
+      }
+      /* Form */
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+      input[type="file"] {
+        margin-bottom: 20px;
+        padding: 8px;
+      }
+      button {
+        background: #e53935;
+        color: #fff;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+      button:hover {
+        background: #c62828;
+      }
+      @media (max-width: 480px) {
+        .card {
+          padding: 20px;
+        }
+        h1 {
+          font-size: 1.6rem;
+        }
+        button {
+          padding: 10px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Upload an Image</h1>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+  </body>
+</html>

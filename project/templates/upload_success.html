@@ -1,0 +1,79 @@
+<!-- success.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Upload Successful</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #fff5f5;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+      .card {
+        background: #fff;
+        border: 2px solid #e53935;
+        border-radius: 12px;
+        max-width: 400px;
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #e53935;
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+      }
+      p {
+        margin-bottom: 24px;
+        font-size: 1rem;
+      }
+      a.button {
+        display: inline-block;
+        background: #e53935;
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        transition: background 0.2s ease;
+      }
+      a.button:hover {
+        background: #c62828;
+      }
+      @media (max-width: 480px) {
+        .card {
+          padding: 20px;
+        }
+        h1 {
+          font-size: 1.6rem;
+        }
+        p {
+          font-size: 0.95rem;
+        }
+        a.button {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Image Uploaded Successfully!</h1>
+      <p>Your image is being processed in the background.</p>
+      <a href="{% url 'upload' %}" class="button">Upload Another</a>
+    </div>
+  </body>
+</html>
